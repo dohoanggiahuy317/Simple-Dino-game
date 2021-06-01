@@ -1,4 +1,25 @@
-document.getElementById("startJump").addEventListener("click", function nextPic() {     
+//sound ------------------------------------------------------------------------------------>
+var soundeffect = true;
+
+document.getElementById("volumnUpdiv").addEventListener("click", function () {
+    soundeffect = false;
+    TweenMax.to('#mutediv', 0, {display: 'flex'}); 
+    TweenMax.to('#volumnUpdiv', 0, {display: 'none'});   
+});
+document.getElementById("mutediv").addEventListener("click", function () {
+    soundeffect = true;
+    TweenMax.to('#mutediv', 0, {display: 'none'}); 
+    TweenMax.to('#volumnUpdiv', 0, {display: 'flex'});   
+});
+
+//run ------------------------------------------------------------------------------------>
+document.getElementById("startJump").addEventListener("click", function nextPic() {
+    
+    if (soundeffect == true){
+    var x = document.getElementById("jumpAudio");
+    x.play();
+    }
+    
 
     //run elem ------------------------------------------------------------------------------------>
     document.getElementById("dinoPic").src = "images/dinoRunRun.png";
@@ -30,7 +51,12 @@ document.getElementById("startJump").addEventListener("click", function nextPic(
             TweenMax.to('#end', 0.3, {opacity: 1, ease: Power1.easeIn});
             TweenMax.to('#scoreBoard', 0, {display: 'none'});
             document.getElementById("showScore").innerHTML = score;
-        }
+
+            if (soundeffect == true){
+                var x = document.getElementById("loseAudio");
+                x.play();
+            };
+        };
     };
     setInterval(intersectRect, 100);
 
@@ -52,7 +78,12 @@ document.getElementById("startJump").addEventListener("click", function nextPic(
             TweenMax.to('#end', 0.3, {opacity: 1, ease: Power1.easeIn});
             TweenMax.to('#scoreBoard', 0, {display: 'none'});
             document.getElementById("showScore").innerHTML = score;
-        }
+            
+            if (soundeffect == true){
+                var x = document.getElementById("loseAudio");
+                x.play();
+            };
+        };
     };
     setInterval(intersectRect2, 100);
 
@@ -75,20 +106,22 @@ document.getElementById("startJump").addEventListener("click", function nextPic(
 
 
 
-
-
-
-
-
 //retry ------------------------------------------------------------------------------------>
 document.getElementById("try").addEventListener("click", function () {
     window.location.reload(true)
 });
-    //jump ------------------------------------------------------------------------------------>
+
+
+//jump ------------------------------------------------------------------------------------>
 document.getElementById("virtualJump").addEventListener("click", function jump() {
     TweenMax.to('#dinosaurIMG', 0.4, {bottom: '55vh', ease: Power1.easeOut});
     TweenMax.to('#dinosaurIMG', 0.4, {delay: 0.4, bottom: '40vh', ease: Power1.easeIn});
     TweenMax.to('#virtualJump', 0, {display: 'none'});
     TweenMax.to('#virtualJump', 0, {delay: 0.8, display: 'flex'});
+
+    if (soundeffect == true){
+    var x = document.getElementById("jumpAudio");
+    x.play();
+    }
 });
 

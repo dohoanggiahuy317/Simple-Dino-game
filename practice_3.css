@@ -98,7 +98,7 @@ html, body {
     position: absolute;
     opacity: 1;
     height: 10vh;
-    width: 15vw;
+    width: 20vw;
     padding: 0;
     margin: 0;
     justify-content: center;
@@ -109,6 +109,10 @@ html, body {
     cursor: pointer;
     border: none;
     z-index: 300;
+    transition: 0.3s;
+}
+#startJump:hover {
+    letter-spacing: 1vh;
 }
 
 
@@ -218,6 +222,11 @@ html, body {
     cursor: pointer;
     background: white;
     border: none;
+    transition: 0.3s;
+}
+
+#try:hover {
+    letter-spacing: 1.5vh;
 }
 
 
@@ -272,12 +281,10 @@ html, body {
         left: -40vh;
     }
 }
-
 .cloud2MoveClass {
     animation: cloud1Move 90s linear infinite;
     animation-delay: 60s;
 }
-
 @keyframes cloud2Move {
     0% {
         left: 110vw;
@@ -285,4 +292,39 @@ html, body {
     100% {
         left: -40vh;
     }
+}
+/* decoration----------------------------------------------------------------------------------- */
+.soundIcon {
+    position: absolute;
+    height: 8vh;
+    width: 8vh;
+    margin: 0;
+    padding: 0;
+    top: 5vh;
+    left: 5vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 600;
+    cursor: pointer;
+}
+#volumnUpdiv {
+    display: flex;
+}
+#volumn {
+    position: absolute;
+    display: flex;
+    left: 0;
+}
+
+
+#mutediv {
+    display: none;
+}
+#mute {
+    position: absolute;
+    display: flex;
+    left: 0;
 }
