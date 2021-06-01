@@ -110,6 +110,8 @@ html, body {
     border: none;
     z-index: 300;
     transition: 0.3s;
+    font-family: 'Abel';
+    font-weight: bolder;
 }
 #startJump:hover {
     letter-spacing: 1vh;

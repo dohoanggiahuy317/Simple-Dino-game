@@ -24,11 +24,16 @@ document.getElementById("startJump").addEventListener("click", function nextPic(
     //run elem ------------------------------------------------------------------------------------>
     document.getElementById("dinoPic").src = "images/dinoRunRun.png";
     
-    TweenMax.to('#virtualJump', 0, {display: 'flex'}); 
-    TweenMax.to('#startJump', 0, {display: 'none'});   
+       
+    if (jumpVar == true) {
+        TweenMax.to('#virtualJump', 0, {display: 'flex'}); 
+        TweenMax.to('#startJump', 0, {display: 'none'});   
 
-    TweenMax.to('#dinosaurIMG', 0.4, {bottom: '60vh', ease: Power1.easeOut});
-    TweenMax.to('#dinosaurIMG', 0.4, {delay: 0.4, bottom: '40vh', ease: Power1.easeIn});    
+        TweenMax.to('#dinosaurIMG', 0.4, {bottom: '60vh', ease: Power1.easeOut});
+        TweenMax.to('#dinosaurIMG', 0.4, {delay: 0.4, bottom: '40vh', ease: Power1.easeIn});
+        jumpVar = false;
+        setTimeout(function changevarback(){jumpVar = true;}, 800);
+    } 
         
     document.querySelector('#cactusCtn1').classList.add('cactusRun');
     document.querySelector('#cactusCtn2').classList.add('cactusRun');
@@ -95,7 +100,7 @@ document.getElementById("startJump").addEventListener("click", function nextPic(
     };
     var scoreRun = setInterval(updateScore, 100);
 
-    //cloude------------------------------------------------------------------------------------>
+    //cloud------------------------------------------------------------------------------------>
     TweenMax.to('#cloud1', 25, {left: '-40vh', ease: Power0.easeNone});
     document.querySelector('#cloud1').classList.add('cloud1MoveClass');
 
@@ -112,8 +117,19 @@ document.getElementById("try").addEventListener("click", function () {
 });
 
 
-//jump ------------------------------------------------------------------------------------>
-document.getElementById("virtualJump").addEventListener("click", function jump() {
+//jump button ------------------------------------------------------------------------------------>
+document.getElementById("virtualJump").addEventListener("click", function () {
+    if (jumpVar == true) {
+        jump();
+        jumpVar = false;
+        setTimeout(function changevarback(){jumpVar = true;}, 800);
+    }
+});
+
+//jump function ------------------------------------------------------------------------------------>
+
+var jumpVar = true;
+function jump() {
     TweenMax.to('#dinosaurIMG', 0.4, {bottom: '55vh', ease: Power1.easeOut});
     TweenMax.to('#dinosaurIMG', 0.4, {delay: 0.4, bottom: '40vh', ease: Power1.easeIn});
     TweenMax.to('#virtualJump', 0, {display: 'none'});
@@ -123,5 +139,13 @@ document.getElementById("virtualJump").addEventListener("click", function jump()
     var x = document.getElementById("jumpAudio");
     x.play();
     }
-});
+};
 
+//key press jump ------------------------------------------------------------------------------------>
+document.addEventListener('keypress', function() {
+    if (jumpVar == true) {
+        jump();
+        jumpVar = false;
+        setTimeout(function changevarback(){jumpVar = true;}, 800);
+    }
+});
