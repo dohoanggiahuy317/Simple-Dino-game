@@ -1,7 +1,7 @@
 document.getElementById("startJump").addEventListener("click", function nextPic() {     
 
     //run elem ------------------------------------------------------------------------------------>
-    document.getElementById("dinoPic").src = "dinoRunRun.png";
+    document.getElementById("dinoPic").src = "images/dinoRunRun.png";
     
     TweenMax.to('#virtualJump', 0, {display: 'flex'}); 
     TweenMax.to('#startJump', 0, {display: 'none'});   
@@ -23,7 +23,7 @@ document.getElementById("startJump").addEventListener("click", function nextPic(
             r2.bottom < r1.top);
 
         if (result == true) {
-            document.getElementById("dinoPic").src = "dinoOver.png";
+            document.getElementById("dinoPic").src = "images/dinoOver.png";
             document.querySelector('#cactusCtn2').classList.remove('cactusRun');
             document.querySelector('#cactusCtn1').classList.remove('cactusRun');
             TweenMax.to('#end', 0, {display: 'flex'});
@@ -45,7 +45,7 @@ document.getElementById("startJump").addEventListener("click", function nextPic(
             r2.top > r1.bottom ||
             r2.bottom < r1.top);
         if (result2 == true) {
-            document.getElementById("dinoPic").src = "dinoOver.png";
+            document.getElementById("dinoPic").src = "images/dinoOver.png";
             document.querySelector('#cactusCtn2').classList.remove('cactusRun');
             document.querySelector('#cactusCtn1').classList.remove('cactusRun');
             TweenMax.to('#end', 0, {display: 'flex'});
