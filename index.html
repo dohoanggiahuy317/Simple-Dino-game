@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="practice_3.css">
+    <link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+</head>
+<body>
+    <!-- loader--------------------------------------------------------------------- -->
+
+    <div class="loader_bg">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Dino--------------------------------------------------------------------- -->
+
+    <div id="dinosaurIMG" >
+        <img id="dinoPic" src="dino.png" />  
+    </div>
+
+    <!-- Ground--------------------------------------------------------------------- -->
+    <div id="ground"></div>
+
+    <!-- button--------------------------------------------------------------------- -->
+
+    <div id="virtualJump"></div>
+    <button id="startJump">click here to play</button>
+
+   
+    <!--cactus--------------------------------------------------------------------- -->
+    <div id="cactusCtn1" class="cactusCtn">
+        <img id="cactusPic1" class="cactusPic" src="cactus1.png" />
+    </div>
+
+    <div id="cactusCtn2" class="cactusCtn">
+        <img id="cactusPic2" class="cactusPic" src="cactus3.png" />
+    </div>
+
+    <!--Des end screen -------------------------------------------------------------->
+    <div id="end">
+        <div id="showScore">100</div>
+        <div id="lose">You Lose. Game over</div>
+        <button id="try">Try again?</button>
+    </div>
+    <!--score board -------------------------------------------------------------->
+    <div id="scoreBoard">0</div>
+
+    <!--decoration -------------------------------------------------------------->
+        <img id="cloud1" class="cloud" src="cloud1.png">
+        <img id="cloud2" class="cloud" src="cloud2.png">
+
+
+
+
+
+    <script src="practice_3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        setTimeout(function (){
+            $('.loader_bg').fadeToggle();    
+            }, 2000);
+
+    </script>
+</body>
+</html>
